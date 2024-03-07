@@ -30,9 +30,9 @@ public class CustomListTest {
     @Test
     public void addCityTest(){
         list = MockCityList();
-        int listSize = list.getCount();
+        int listSize = list.countCities();
         list.addCity(new City("Estevan", "SK"));
-        assertEquals(list.getCount(),listSize + 1);
+        assertEquals(list.countCities(),listSize + 1);
     }
 
     @Test
@@ -52,6 +52,19 @@ public class CustomListTest {
         assertEquals(true, list.hasCity(city));
         list.deleteCity(city);
         assertEquals(false, list.hasCity(city));
+    }
+
+    @Test
+    void countCitiesTest() {
+        list = MockCityList();
+        assertEquals(0, list.countCities());
+
+        City city = new City("city3", "province3");
+        list.addCity(city);
+        assertEquals(1, list.countCities());
+
+        list.deleteCity(city);
+        assertEquals(0, list.countCities());
     }
 
 }
