@@ -73,5 +73,15 @@ public class CustomList extends ArrayAdapter<City> {
 
     }
 
+    /**
+     * Checks if the city is present in the list.
+     * If it is, then remove it from the list, if not then throw an exception
+     * @param city
+     * This is a candidate city to delete
+     */
+    public void deleteCity(City city) {
+
+    }
+
 
 }
